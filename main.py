@@ -12,21 +12,20 @@ def get_book_text(book):
         return f.read()
     
 def main():
-    print(get_book_text(book))
+    book_characters = char_count(book)
+    sorted = sort_chars(book_characters)
 
-book_characters = char_count(book)
-
-sorted = sort_chars(book_characters)
-
-def report(char_count):
-    for s in char_count:
-        if s["char"].isalpha():
-            print(f"{s["char"]}: {s["num"]}")
+    def report(char_count):
+        for s in char_count:
+            if s["char"].isalpha():
+                print(f"{s["char"]}: {s["num"]}")
     
-def styling(book):
-    print(f"============ BOOKBOT ============\nAnalyzing book found at {book} \n----------- Word Count ----------")
-    word_count(book)
-    print("--------- Character Count -------")
-    report(sorted)
+    def styling(book):
+        print(f"============ BOOKBOT ============\nAnalyzing book found at {book} \n----------- Word Count ----------")
+        word_count(book)
+        print("--------- Character Count -------")
+        report(sorted)
 
-styling(book)
+    styling(book)
+    
+main()

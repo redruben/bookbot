@@ -1,7 +1,3 @@
-import sys
-
-book = sys.argv[1]
-
 def get_book_text(book):
     with open(book) as f:
         return f.read()
@@ -11,8 +7,6 @@ def word_count(book):
     words = len(book_strings.split())
 
     print(f"Found {words} total words")
-
-word_count(book)
 
 def char_count(book):
     dict = {}
