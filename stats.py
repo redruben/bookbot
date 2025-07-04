@@ -6,7 +6,7 @@ def word_count(book):
     book_strings = get_book_text(book)
     words = len(book_strings.split())
 
-    print(f"{words} words found in the document")
+    print(f"Found {words} total words")
 
 (word_count("books/frankenstein.txt"))
 
@@ -21,4 +21,12 @@ def char_count(book):
             dict[char] += 1
     return dict
 
-char_count("books/frankenstein.txt")
+def sort_help(list):
+    return list["num"]
+
+def sort_chars(dictionary):
+    list = []
+    for char, num in dictionary.items():
+        list.append({"char": char,"num": num})
+    list.sort(reverse=True, key=sort_help)
+    return list
